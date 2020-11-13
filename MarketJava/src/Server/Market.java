@@ -1,14 +1,16 @@
 package Server;
 
-import javafx.util.Pair;
+import Utils.Pair;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+import static Server.Message.*;
+
 public class Market {
     protected static BigInteger currentTraderID = BigInteger.ZERO;
     private static Trader currentStockHolder;
-    protected static ArrayList<Trader> traders = new ArrayList<>();
+    private static ArrayList<Trader> traders = new ArrayList<>();
     protected static Object tradersLock = new Object();
 
     public Market()
@@ -38,18 +40,41 @@ public class Market {
         return new Pair<>(currentTraders, trader);
     }
 
-    public Trader getCurrentStockHolder()
+    public static void removeTrader(Trader trader)
     {
-        return currentStockHolder;
+        Pair<Object, ArrayList<Trader>> traders = Market.getTraders();
+        synchronized (traders.first()) {
+            ArrayList<Trader> tradersList = traders.second();
+            tradersList.remove(trader);
+            if (Market.getCurrentStockHolder().equals(trader))
+            {
+                if (tradersList.size() == 0)
+                    setStockHolder(null);
+                else
+                {
+                    Trader randomTrader = tradersList.get((int) Math.floor(Math.random() * tradersList.size()));
+                    setStockHolder(randomTrader);
+                    ServerProgram.ui.addMessage(Message.traderAcqUI(currentStockHolder.getID()));
+                    TraderHandler.broadcast(Message.traderAcqBC(randomTrader.getID()));
+                }
+            }
+            ServerProgram.ui.addMessage(Message.traderLeftUI(trader.getID()));
+            ServerProgram.ui.removeTrader(trader.getID());
+        }
     }
 
-    public void setStockHolder(Trader trader)
+    public static Trader getCurrentStockHolder()
     {
-        currentStockHolder = trader;
+        return Market.currentStockHolder;
+    }
+
+    public static void setStockHolder(Trader trader)
+    {
+        Market.currentStockHolder = trader;
     }
 
     public static Pair<Object, ArrayList<Trader>> getTraders()
     {
-        return new Pair<Object, ArrayList<Trader>>(tradersLock, traders);
+        return new Pair<>(Market.tradersLock, Market.traders);
     }
 }

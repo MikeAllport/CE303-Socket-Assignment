@@ -1,8 +1,8 @@
 package Client;
 
 public class ServerIrreparableException extends Exception{
-    public ServerIrreparableException(String ID, String cause)
+    public ServerIrreparableException(String ID)
     {
-        super("Server failed during operation. Attempted to restore 3 times unsuccessfully");
+        super(ID);
     }
 }

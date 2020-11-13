@@ -7,13 +7,12 @@ import java.net.Socket;
 public class ServerProgram {
     final static String ADDRESS = "localhost";
     final static int PORT = 8888;
-    public final static GUI ui = new GUI();
+    private final static String UI_TITLE = "Server";
+    public static GUI ui = new GUI(UI_TITLE);
 
 
     public static void main(String[] args) {
-        System.out.println(System.getProperty("user.dir"));
         ServerProgram.runServer(new Market());
-        return;
     }
 
     public static void runServer(Market m)
@@ -30,6 +29,8 @@ public class ServerProgram {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Failed to start server");
+            ServerProgram.ui.close();
         }
     }
 }

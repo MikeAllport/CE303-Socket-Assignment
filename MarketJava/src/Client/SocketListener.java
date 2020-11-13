@@ -1,5 +1,9 @@
 package Client;
 
+import Server.ServerProgram;
+
+import java.net.Socket;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class SocketListener implements Runnable{
@@ -13,12 +17,17 @@ public class SocketListener implements Runnable{
     }
 
     @Override
+    @SuppressWarnings("InfiniteLoopStatement")
     public void run()
     {
-        while(true)
+        try {
+            while (true) {
+                String line = scanner.nextLine();
+                this.handler.processLine(line);
+            }
+        } catch (NoSuchElementException e)
         {
-            String line = scanner.nextLine();
-            this.handler.processLine(line);
+            ClientProgram.socketClosed = true;
         }
     }
 }

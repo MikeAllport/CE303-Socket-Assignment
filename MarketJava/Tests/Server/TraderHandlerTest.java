@@ -1,58 +1,54 @@
-//package Server;
-//
-//import org.junit.Before;
-//import org.junit.Test;
-//
-//import java.net.Socket;
-//
-//import static org.junit.Assert.*;
-//
-//public class TraderHandlerTest {
-//    Market market;
-//    TraderHandlerStub th;
-//    Socket socket;
-//
-//    @Before
-//    public void init() throws Exception
-//    {
-//        this.market = new Market();
-//        this.th = new TraderHandlerStub(new Socket(), market);
-//        this.th.removeAll();
-//        ServerProgram.runServerSeperateProcess();
-//        socket = new Socket(ServerProgram.ADDRESS, ServerProgram.PORT);
-//    }
-//
-//    @Test
-//    public void testGetNextTraderID() throws Exception
-//    {
-//        int expectedID = 999;
-//
-//        for (int i = 0; i < expectedID; i++)
-//        {
-//            Trader trader = new Trader(this.socket, Market.getNewTraderID());
-//            this.th.addTrader(trader);
-//        }
-//
-//        String traderid = Market.getNewTraderID();
-//        Trader trader = new Trader(this.socket, traderid);
-//        assertEquals("Trader999", trader.getID());
-//    }
-//
-//    @Test
-//    public void testKillTrader() throws Exception
-//    {
-//        Trader t1 = new Trader(this.socket, "");
-//        th.addTrader(t1);
-//        assertTrue(th.testKillTrader(t1));
-//        assertFalse(th.testKillTrader(t1));
-//    }
-//
-//    @Test
-//    public void processLine() {
-//    }
-//
-//    @Test
-//    public void testRun() {
-//
-//    }
-//}
+package Server;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import java.math.BigInteger;
+
+import static org.junit.Assert.*;
+import static Server.Message.*;
+
+public class TraderHandlerTest {
+    Market market = new Market();
+    TraderHandlerStub handler = new TraderHandlerStub(market);
+
+    @Before
+    public void init()
+    {
+        Market.setStockHolder(null);
+        Market.getTraders().second().clear();
+    }
+
+    @Test
+    public void processLineFailNotEnum() {
+        assertEquals(handler.processLine(" "), ERROR);
+        assertEquals(handler.processLine("Muhahaha"), ERROR);
+        assertEquals(handler.processLine(""), ERROR);
+    }
+
+    @Test
+    public void processLineSuccTRADER_TRADE()
+    {
+        Trader t1 = Market.newTrader().second();
+        assertEquals(t1, Market.getCurrentStockHolder());
+        Trader t2 = Market.newTrader().second();
+        handler.trader = t1;
+        String tradeStr = TRADER_TRADE.getLabel() + t1.getID() + " " + t2.getID();
+        assertEquals(TRADE_SUCC, handler.processLine(tradeStr));
+    }
+
+    @Test
+    public void processLineFailTRADER_TRADE()
+    {
+        Trader t1 = Market.newTrader().second();
+        handler.trader = t1;
+        assertEquals(handler.processLine("TRADER_TRADE "), ERROR);
+        assertEquals(handler.processLine("TRADER_TRADE t1"), ERROR);
+        assertEquals(handler.processLine("TRADER_TRADE t1 t2"), TRADE_FAIL);
+        assertEquals(handler.processLine("TRADER_TRADE t1 t2 t3"), ERROR);
+    }
+
+    @Test
+    public void killTrader() {
+    }
+}

@@ -3,20 +3,26 @@ package Server;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.util.HashMap;
+import java.awt.event.WindowEvent;
+import java.util.*;
 
 public class GUI {
-    private JPanel traders, broadcast;
-    private JFrame window;
     private ServerProgram program;
-    private HashMap<String, JLabel> traderList;
+    protected JFrame window;
+    protected JPanel traders, broadcast;
+    protected static final int BROADCAST_PANEL_WIDTH = 650;
+    protected static final int BUT_PANEL_WIDTH = 150;
+    protected static final int CELL_HEIGHT = 25;
+    protected ArrayList<JLabel> messages;
+    protected TreeMap<String, JButton> traderList;
 
-    public GUI()
+    public GUI(String title)
     {
-        this.window = new JFrame("Server");
+        this.messages = new ArrayList<>();
+        this.window = new JFrame(title);
         this.broadcast = new JPanel();
         this.traders = new JPanel();
-        traderList = new HashMap<>();
+        traderList = new TreeMap<>();
         setWindow();
     }
 
@@ -35,7 +41,7 @@ public class GUI {
 
     private JPanel getBroadcastContainer()
     {
-        Dimension dimension = new Dimension(650, 500);
+        Dimension dimension = new Dimension(BROADCAST_PANEL_WIDTH, 500);
         JPanel container = new JPanel();
         setPanel(this.broadcast, container, "Server Messages", dimension);
         return container;
@@ -43,7 +49,7 @@ public class GUI {
 
     private JPanel getTradersPanel()
     {
-        Dimension dimension = new Dimension(150, 500);
+        Dimension dimension = new Dimension(BUT_PANEL_WIDTH, 500);
         JPanel container = new JPanel();
         setPanel(this.traders, container, "Traders", dimension);
         return container;
@@ -62,31 +68,101 @@ public class GUI {
         toSetup.setBackground(new Color(255, 255, 255));
         toSetup.setBackground(new Color(255, 255, 255));
         toSetup.setPreferredSize(new Dimension(dimension.width, dimension.height - label.getSize().height));
-        toSetup.setLayout(new BoxLayout(toSetup, BoxLayout.Y_AXIS));
+        toSetup.setLayout(new GridBagLayout());
     }
 
 
     public synchronized void addTrader(String id)
     {
-        JLabel trader = new JLabel(id);
-        this.traders.add(trader);
-        this.traderList.put(id, trader);
+        if (traderList.containsKey(id))
+            return;
+        JButton trader = new JButton(id);
+        trader.setFocusPainted(false);
+        trader.setMargin(new Insets(0, 0, 0, 0));
+        trader.setContentAreaFilled(false);
+        trader.setBorderPainted(false);
+        trader.setOpaque(false);
+        trader.setPreferredSize(new Dimension(GUI.BUT_PANEL_WIDTH, GUI.CELL_HEIGHT));
+        addButtonToList(trader, id);
+    }
+
+    protected void addButtonToList(JButton but, String id)
+    {
+        this.traderList.put(id, but);
+        GridBagConstraints gbc = getConst();
+        this.traders.removeAll();
+        int i = 0;
+        gbc.weighty = 0;
+        for (Map.Entry<String, JButton> entry: traderList.entrySet())
+        {
+            gbc.gridy = i++;
+            traders.add(entry.getValue(), gbc);
+        }
+        gbc.weighty = 1;
+        gbc.gridy = i;
+        this.traders.add(but, gbc);
         this.window.repaint();
         window.pack();
     }
 
     public synchronized void addMessage(String message)
     {
-        this.broadcast.add(new JLabel(message));
+        GridBagConstraints gbc = getConst();
+        JLabel messageLabel = new JLabel(message);
+        messageLabel.setPreferredSize(new Dimension(GUI.BROADCAST_PANEL_WIDTH, GUI.CELL_HEIGHT));
+        messageLabel.setBorder(new EmptyBorder(0, 5, 0, 0));
+        this.messages.add(messageLabel);
+        broadcast.removeAll();
+        int i;
+        for (i = 0; i < messages.size(); i++)
+        {
+            gbc.gridy = i;
+            broadcast.add(messages.get(i), gbc);
+        }
+        gbc.weighty = 1;
+        gbc.gridy = ++i;
+        this.broadcast.add(messageLabel, gbc);
         this.window.repaint();
         window.pack();
     }
 
+    protected GridBagConstraints getConst()
+    {
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.NORTHWEST;
+        gbc.weightx = 1;
+        gbc.weighty = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.gridx = 0;
+        gbc.ipadx = 0;
+        gbc.ipady = 0;
+        gbc.insets = new Insets(0,0,0,0);
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        return gbc;
+    }
+
     public synchronized void removeTrader(String id)
     {
-        this.traders.remove(traderList.get(id));
+        GridBagConstraints gbc = getConst();
         this.traderList.remove(id);
+        this.traders.removeAll();
+        int i = 0;
+        gbc.weighty = 0;
+        for (Map.Entry<String, JButton> entry: traderList.entrySet())
+        {
+            if (i == traderList.entrySet().size() - 1) {
+                gbc.weighty = 1;
+            }
+            gbc.gridy = i++;
+            traders.add(entry.getValue(), gbc);
+        }
         this.window.repaint();
         window.pack();
+    }
+
+    public void close()
+    {
+        window.dispatchEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSING));
     }
 }

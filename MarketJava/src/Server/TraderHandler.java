@@ -1,6 +1,6 @@
 package Server;
 
-import javafx.util.Pair;
+import Utils.*;
 
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -13,7 +13,8 @@ public class TraderHandler implements Runnable{
     protected Scanner scanner;
     protected PrintWriter printWriter;
 
-    private Trader trader = null;
+    // had to change trader to protected for testing purposes
+    protected Trader trader = null;
     private final Socket socket;
     private final Market market;
 
@@ -24,32 +25,39 @@ public class TraderHandler implements Runnable{
         this.socket = socket;
     }
 
-    synchronized void processLine(String line)
+    protected synchronized Message processLine(String line)
     {
         String arr[] = line.split(" ");
-        if (!isEnum(arr[0]))
+        if (arr.length <= 0 || !isEnum(arr[0]))
         {
-            sendMessage(ERROR.getLabel() + line + " is not a valid server request");
-            return;
+            sendMessage(Message.error(line + " is not a valid server request"));
+            return ERROR;
         }
-        switch(Message.valueOf(arr[0]))
-        {
-            case TRADER_TRADE:
-                tradeStock(arr[1]);
+        if (valueOf(arr[0]) == TRADER_TRADE) {
+            if (arr.length != 2)
+            {
+                sendMessage(Message.error("'" + line + "' has incorrect argument number, 1 id required"));
+                return ERROR;
+            }
+            return tradeStock(arr[1]);
         }
+        sendMessage(Message.error("'" + line + "'" + " unrecognised command"));
+        return ERROR;
     }
 
-    private void tradeStock(String otherTraderID)
+    private Message tradeStock(String otherTraderID)
     {
+        if (this.trader == null)
+            return null;
         if (this.trader != market.getCurrentStockHolder())
         {
-            sendMessage(ERROR.getLabel() + "you do not have the stock to give away!");
-            return;
+            sendMessage(Message.error("you do not have the stock to give away!"));
+            return TRADE_FAIL;
         }
         Pair<Object, ArrayList<Trader>> traders = Market.getTraders();
-        synchronized (traders.getKey()) {
+        synchronized (traders.first()) {
             Trader otherTrader = null;
-            for (Trader trader1: traders.getValue())
+            for (Trader trader1: traders.second())
             {
                 if (trader1.getID().equals(otherTraderID))
                     otherTrader = trader1;
@@ -57,41 +65,41 @@ public class TraderHandler implements Runnable{
             if (otherTrader != null && otherTrader.deathIndicator.get() == 0)
             {
                 this.market.setStockHolder(otherTrader);
-                broadcast(TRADER_ACQ_STOCK.getLabel() + otherTrader.getID());
-                ServerProgram.ui.addMessage(this.trader.getID() + " traded stock to " + otherTraderID);
+                broadcast(Message.tradeBC(trader.getID(), otherTraderID));
+                ServerProgram.ui.addMessage(Message.tradeUI(this.trader.getID(), otherTraderID));
+                return TRADE_SUCC;
             }
             else
             {
-                sendMessage(TRADE_FAIL.getLabel() + otherTraderID + " is invalid, or other client disconnected. " +
-                        "Please try again");
+                sendMessage(Message.tradeFailBC(otherTraderID + " is invalid, or other client disconnected. " +
+                        "Please try again"));
+                return TRADE_FAIL;
             }
         }
     }
 
     protected void killTrader()
     {
+        if (trader == null)
+            return;
         this.trader.deathIndicator.incrementAndGet();
-        Pair<Object, ArrayList<Trader>> traders = Market.getTraders();
-        synchronized (traders.getKey()) {
-            traders.getValue().remove(this.trader);
-
-        }
-        broadcast(TRADER_LEFT.getLabel() + trader.getID());
-        ServerProgram.ui.addMessage(this.trader.getID() + " left.");
-        ServerProgram.ui.removeTrader(this.trader.getID());
+        broadcast(Message.traderLeftBC(this.trader.getID()));
+        Market.removeTrader(this.trader);
     }
 
     private void initTrader()
     {
         Pair<ArrayList<String>, Trader> tradersAndMe = Market.newTrader();
-        this.trader = tradersAndMe.getValue();
-        String allTraders = TRADER_LIST.getLabel();
-        for (String traderID: tradersAndMe.getKey())
+        this.trader = tradersAndMe.second();
+        String allTraders = "";
+        for (String traderID: tradersAndMe.first())
             allTraders += traderID + " ";
-        sendMessage(TRADER_ID.getLabel() + this.trader.getID());
-        sendMessage(allTraders);
-        broadcast(TRADER_JOINED.getLabel() + trader.getID());
-        ServerProgram.ui.addMessage(String.format("Trader %s joined the server", trader.getID()));
+        sendMessage(Message.traderIDBC(this.trader.getID()));
+        sendMessage(Message.allTradersBC(allTraders));
+        Trader stockHolder = Market.getCurrentStockHolder();
+        sendMessage(Message.traderWithStockBC((stockHolder != null)? stockHolder.getID(): "null"));
+        broadcast(Message.traderJoincedBC(trader.getID()));
+        ServerProgram.ui.addMessage(Message.traderJoinedUI(trader.getID()));
         ServerProgram.ui.addTrader(trader.getID());
     }
 
@@ -109,12 +117,12 @@ public class TraderHandler implements Runnable{
         printWriter.println(message);
     }
 
-    private static void broadcast(String message)
+    protected static void broadcast(String message)
     {
         Pair<Object, ArrayList<Trader>> theTradersWLock = Market.getTraders();
-        synchronized (theTradersWLock.getKey())
+        synchronized (theTradersWLock.first())
         {
-            for (Trader trader: theTradersWLock.getValue())
+            for (Trader trader: theTradersWLock.second())
                 trader.addMessage(message);
         }
     }
