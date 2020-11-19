@@ -12,11 +12,11 @@ public class ClientProgram {
     protected static Boolean socketClosed = false;
     protected final static GUI ui = new GUI(UI_TITLE);
 
-    protected ClientHandler handler;
+    protected static ClientHandler handler;
 
     public ClientProgram()
     {
-        this.handler = new ClientHandler();
+        ClientProgram.handler = new ClientHandler();
         initSocket();
     }
 
@@ -46,10 +46,10 @@ public class ClientProgram {
 
     private void initClientHandler(Socket socket) throws Exception
     {
-        this.handler.init(socket);
+        ClientProgram.handler.init(socket);
     }
 
-    private boolean restartServer() throws ServerIrreparableException
+    private void restartServer() throws ServerIrreparableException
     {
         try
         {
@@ -64,7 +64,6 @@ public class ClientProgram {
         {
             throw new ServerIrreparableException("Failed to restart server during thread sleep");
         }
-        return false;
     }
 
     public static void runServerSeparateProcess(String executable, String dir, String className)

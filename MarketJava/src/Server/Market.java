@@ -1,17 +1,16 @@
 package Server;
 
+import Utils.ListLock;
 import Utils.Pair;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 
-import static Server.Message.*;
 
 public class Market {
     protected static BigInteger currentTraderID = BigInteger.ZERO;
     private static Trader currentStockHolder;
-    private static ArrayList<Trader> traders = new ArrayList<>();
-    protected static Object tradersLock = new Object();
+    protected static ListLock<Trader> traders = new ListLock<>();
 
     public Market()
     {
@@ -29,11 +28,11 @@ public class Market {
     {
         Trader trader = new Trader(getNewTraderID());
         ArrayList<String> currentTraders = new ArrayList<>();
-        synchronized (tradersLock)
+        synchronized (traders.getLock())
         {
-            for (Trader otherTrader: traders)
+            for (Trader otherTrader: traders.getList())
                 currentTraders.add(otherTrader.getID());
-            traders.add(trader);
+            traders.getList().add(trader);
             if (currentStockHolder == null)
                 currentStockHolder = trader;
         }
@@ -42,24 +41,22 @@ public class Market {
 
     public static void removeTrader(Trader trader)
     {
-        Pair<Object, ArrayList<Trader>> traders = Market.getTraders();
-        synchronized (traders.first()) {
-            ArrayList<Trader> tradersList = traders.second();
-            tradersList.remove(trader);
+        synchronized (Market.traders.getLock())
+        {
+            Market.traders.getList().remove(trader);
             if (Market.getCurrentStockHolder().equals(trader))
             {
-                if (tradersList.size() == 0)
+                if (Market.traders.getList().size() == 0)
                     setStockHolder(null);
                 else
                 {
-                    Trader randomTrader = tradersList.get((int) Math.floor(Math.random() * tradersList.size()));
+                    Trader randomTrader = Market.traders.getList().get((int) Math.floor(Math.random() *
+                            Market.traders.getList().size()));
                     setStockHolder(randomTrader);
                     ServerProgram.ui.addMessage(Message.traderAcqUI(currentStockHolder.getID()));
-                    TraderHandler.broadcast(Message.traderAcqBC(randomTrader.getID()));
+                    TraderHandler.broadcast(Message.traderAcqBroadCast(randomTrader.getID()));
                 }
             }
-            ServerProgram.ui.addMessage(Message.traderLeftUI(trader.getID()));
-            ServerProgram.ui.removeTrader(trader.getID());
         }
     }
 
@@ -71,10 +68,5 @@ public class Market {
     public static void setStockHolder(Trader trader)
     {
         Market.currentStockHolder = trader;
-    }
-
-    public static Pair<Object, ArrayList<Trader>> getTraders()
-    {
-        return new Pair<>(Market.tradersLock, Market.traders);
     }
 }

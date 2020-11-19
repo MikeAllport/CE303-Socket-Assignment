@@ -1,8 +1,5 @@
 package Client;
 
-import Server.ServerProgram;
-
-import java.net.Socket;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 

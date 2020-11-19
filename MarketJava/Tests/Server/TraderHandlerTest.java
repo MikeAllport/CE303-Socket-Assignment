@@ -16,7 +16,7 @@ public class TraderHandlerTest {
     public void init()
     {
         Market.setStockHolder(null);
-        Market.getTraders().second().clear();
+        Market.traders.getList().clear();
     }
 
     @Test

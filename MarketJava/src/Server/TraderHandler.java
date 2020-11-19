@@ -25,6 +25,63 @@ public class TraderHandler implements Runnable{
         this.socket = socket;
     }
 
+    @Override
+    public void run() {
+        try
+        {
+            try {
+                scanner = new Scanner(socket.getInputStream());
+                printWriter = new PrintWriter(socket.getOutputStream(), true);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Failed to create socket streams");
+            }
+            initTrader();
+            startOutboxListener();
+            startListening();
+        } catch (Exception ignore) {
+        }
+        finally
+        {
+            if (this.trader != null)
+            {
+                killTrader();
+            }
+        }
+    }
+
+    private void initTrader()
+    {
+        Pair<ArrayList<String>, Trader> tradersAndMe = Market.newTrader();
+        this.trader = tradersAndMe.second();
+        String allTraders = "";
+        for (String traderID: tradersAndMe.first())
+            allTraders += traderID + " ";
+        sendMessage(Message.traderIDBroadCast(this.trader.getID()));
+        sendMessage(Message.allTradersBroadCast(allTraders));
+        Trader stockHolder = Market.getCurrentStockHolder();
+        sendMessage(Message.traderWithStockBroadCast((stockHolder != null)? stockHolder.getID(): "null"));
+        broadcast(Message.traderJoincedBroadCast(trader.getID()));
+        ServerProgram.ui.addMessage(Message.traderJoinedUI(trader.getID()));
+        ServerProgram.ui.addTrader(trader.getID());
+    }
+
+    public void startOutboxListener()
+    {
+        new Thread(new OutboxChecker(this)).start();
+    }
+
+
+    private void startListening()
+    {
+        while (true)
+        {
+            String line = this.scanner.nextLine();
+            processLine(line);
+        }
+    }
+
     protected synchronized Message processLine(String line)
     {
         String arr[] = line.split(" ");
@@ -54,24 +111,23 @@ public class TraderHandler implements Runnable{
             sendMessage(Message.error("you do not have the stock to give away!"));
             return TRADE_FAIL;
         }
-        Pair<Object, ArrayList<Trader>> traders = Market.getTraders();
-        synchronized (traders.first()) {
+        synchronized (Market.traders.getLock()) {
             Trader otherTrader = null;
-            for (Trader trader1: traders.second())
+            for (Trader trader1: Market.traders.getList())
             {
-                if (trader1.getID().equals(otherTraderID))
+                if (trader1.getID().toUpperCase().equals(otherTraderID.toUpperCase()))
                     otherTrader = trader1;
             }
             if (otherTrader != null && otherTrader.deathIndicator.get() == 0)
             {
-                this.market.setStockHolder(otherTrader);
-                broadcast(Message.tradeBC(trader.getID(), otherTraderID));
+                Market.setStockHolder(otherTrader);
+                broadcast(Message.tradeBroadCast(trader.getID(), otherTraderID));
                 ServerProgram.ui.addMessage(Message.tradeUI(this.trader.getID(), otherTraderID));
                 return TRADE_SUCC;
             }
             else
             {
-                sendMessage(Message.tradeFailBC(otherTraderID + " is invalid, or other client disconnected. " +
+                sendMessage(Message.tradeFailBroadCast(otherTraderID + " is invalid, or other client disconnected. " +
                         "Please try again"));
                 return TRADE_FAIL;
             }
@@ -83,33 +139,10 @@ public class TraderHandler implements Runnable{
         if (trader == null)
             return;
         this.trader.deathIndicator.incrementAndGet();
-        broadcast(Message.traderLeftBC(this.trader.getID()));
+        broadcast(Message.traderLeftBroadCast(this.trader.getID()));
+        ServerProgram.ui.addMessage(Message.traderLeftUI(trader.getID()));
+        ServerProgram.ui.removeTrader(trader.getID());
         Market.removeTrader(this.trader);
-    }
-
-    private void initTrader()
-    {
-        Pair<ArrayList<String>, Trader> tradersAndMe = Market.newTrader();
-        this.trader = tradersAndMe.second();
-        String allTraders = "";
-        for (String traderID: tradersAndMe.first())
-            allTraders += traderID + " ";
-        sendMessage(Message.traderIDBC(this.trader.getID()));
-        sendMessage(Message.allTradersBC(allTraders));
-        Trader stockHolder = Market.getCurrentStockHolder();
-        sendMessage(Message.traderWithStockBC((stockHolder != null)? stockHolder.getID(): "null"));
-        broadcast(Message.traderJoincedBC(trader.getID()));
-        ServerProgram.ui.addMessage(Message.traderJoinedUI(trader.getID()));
-        ServerProgram.ui.addTrader(trader.getID());
-    }
-
-    private void mainLoop()
-    {
-        while (true)
-        {
-            String line = this.scanner.nextLine();
-            processLine(line);
-        }
     }
 
     protected void sendMessage(String message)
@@ -119,10 +152,9 @@ public class TraderHandler implements Runnable{
 
     protected static void broadcast(String message)
     {
-        Pair<Object, ArrayList<Trader>> theTradersWLock = Market.getTraders();
-        synchronized (theTradersWLock.first())
+        synchronized (Market.traders.getLock())
         {
-            for (Trader trader: theTradersWLock.second())
+            for (Trader trader: Market.traders.getList())
                 trader.addMessage(message);
         }
     }
@@ -130,37 +162,6 @@ public class TraderHandler implements Runnable{
     public Trader getTrader()
     {
         return trader;
-    }
-
-    public void startOutboxListener()
-    {
-        new Thread(new OutboxChecker(this)).start();
-    }
-
-    @Override
-    public void run() {
-        try
-        {
-            try {
-                scanner = new Scanner(socket.getInputStream());
-                printWriter = new PrintWriter(socket.getOutputStream(), true);
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Failed to create socket streams");
-            }
-            initTrader();
-            startOutboxListener();
-            mainLoop();
-        } catch (Exception ignore) {
-        }
-        finally
-        {
-            if (this.trader != null)
-            {
-                killTrader();
-            }
-        }
     }
 
 }

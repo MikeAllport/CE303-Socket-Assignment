@@ -10,8 +10,11 @@ public class GUI {
     private ServerProgram program;
     protected JFrame window;
     protected JPanel traders, broadcast;
+    protected static final int WINDOW_HEIGHT = 550;
+    protected static final int WINDOW_WIDTH = 800;
     protected static final int BROADCAST_PANEL_WIDTH = 650;
     protected static final int BUT_PANEL_WIDTH = 150;
+    protected static final int BB_PANEL_HEIGHT = 550;
     protected static final int CELL_HEIGHT = 25;
     protected ArrayList<JLabel> messages;
     protected TreeMap<String, JButton> traderList;
@@ -20,6 +23,7 @@ public class GUI {
     {
         this.messages = new ArrayList<>();
         this.window = new JFrame(title);
+        this.window.setLayout(new BorderLayout());
         this.broadcast = new JPanel();
         this.traders = new JPanel();
         traderList = new TreeMap<>();
@@ -33,7 +37,9 @@ public class GUI {
         this.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.window.add(traders, BorderLayout.WEST);
         this.window.add(broadcast, BorderLayout.EAST);
-        this.window.setSize(new Dimension(800, 550));
+        Dimension windowSize = new Dimension(WINDOW_WIDTH, GUI.WINDOW_HEIGHT);
+        this.window.setMinimumSize(windowSize);
+        this.window.setMaximumSize(windowSize);
         this.window.setResizable(false);
         this.window.setVisible(true);
         this.window.pack();
@@ -41,7 +47,7 @@ public class GUI {
 
     private JPanel getBroadcastContainer()
     {
-        Dimension dimension = new Dimension(BROADCAST_PANEL_WIDTH, 500);
+        Dimension dimension = new Dimension(GUI.BROADCAST_PANEL_WIDTH, GUI.BB_PANEL_HEIGHT);
         JPanel container = new JPanel();
         setPanel(this.broadcast, container, "Server Messages", dimension);
         return container;
@@ -49,7 +55,7 @@ public class GUI {
 
     private JPanel getTradersPanel()
     {
-        Dimension dimension = new Dimension(BUT_PANEL_WIDTH, 500);
+        Dimension dimension = new Dimension(GUI.BUT_PANEL_WIDTH, GUI.BB_PANEL_HEIGHT);
         JPanel container = new JPanel();
         setPanel(this.traders, container, "Traders", dimension);
         return container;
@@ -60,15 +66,22 @@ public class GUI {
         JLabel label = new JLabel(labelName);
         label.setVerticalAlignment(SwingConstants.TOP);
         label.setBorder(new EmptyBorder(5, 5, 5, 5));
-        container.setLayout(new BorderLayout());
-        container.add(label, BorderLayout.NORTH);
-        container.add(new JScrollPane(toSetup, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.SOUTH);
         toSetup.setAlignmentX(SwingConstants.LEFT);
         toSetup.setBackground(new Color(255, 255, 255));
-        toSetup.setBackground(new Color(255, 255, 255));
-        toSetup.setPreferredSize(new Dimension(dimension.width, dimension.height - label.getSize().height));
         toSetup.setLayout(new GridBagLayout());
+        Dimension panelSize = new Dimension(dimension.width, dimension.height - label.getSize().height);
+        toSetup.setSize(panelSize);
+        toSetup.setMinimumSize(panelSize);
+
+        container.setLayout(new BorderLayout());
+        container.add(label, BorderLayout.NORTH);
+        JScrollPane scroll = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scroll.setBorder(new EmptyBorder(0,10,0,10));
+        scroll.setViewportView(toSetup);
+        scroll.getVerticalScrollBar().setUnitIncrement(50);
+        scroll.setPreferredSize(panelSize);
+        container.add(scroll, BorderLayout.SOUTH);
     }
 
 
@@ -82,7 +95,7 @@ public class GUI {
         trader.setContentAreaFilled(false);
         trader.setBorderPainted(false);
         trader.setOpaque(false);
-        trader.setPreferredSize(new Dimension(GUI.BUT_PANEL_WIDTH, GUI.CELL_HEIGHT));
+        trader.setPreferredSize(new Dimension(GUI.BUT_PANEL_WIDTH - 20, GUI.CELL_HEIGHT));
         addButtonToList(trader, id);
     }
 
@@ -107,11 +120,14 @@ public class GUI {
 
     public synchronized void addMessage(String message)
     {
-        GridBagConstraints gbc = getConst();
         JLabel messageLabel = new JLabel(message);
-        messageLabel.setPreferredSize(new Dimension(GUI.BROADCAST_PANEL_WIDTH, GUI.CELL_HEIGHT));
-        messageLabel.setBorder(new EmptyBorder(0, 5, 0, 0));
-        this.messages.add(messageLabel);
+        addMessageToPanel(messageLabel);
+    }
+
+    protected void addMessageToPanel(JLabel label)
+    {
+        GridBagConstraints gbc = getConst();
+        this.messages.add(label);
         broadcast.removeAll();
         int i;
         for (i = 0; i < messages.size(); i++)
@@ -121,7 +137,7 @@ public class GUI {
         }
         gbc.weighty = 1;
         gbc.gridy = ++i;
-        this.broadcast.add(messageLabel, gbc);
+        this.broadcast.add(label, gbc);
         this.window.repaint();
         window.pack();
     }

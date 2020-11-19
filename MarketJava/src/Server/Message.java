@@ -34,12 +34,12 @@ public enum Message
         }
     }
 
-    public static String allTradersBC(String traders)
+    public static String allTradersBroadCast(String traders)
     {
         return TRADER_LIST.getLabel() + traders;
     }
 
-    public static String traderJoincedBC(String trader)
+    public static String traderJoincedBroadCast(String trader)
     {
         return TRADER_JOINED.getLabel() + trader;
     }
@@ -49,27 +49,27 @@ public enum Message
         return String.format("Trader %s joined the server", trader);
     }
 
-    public static String traderWithStockBC(String trader)
+    public static String traderWithStockBroadCast(String trader)
     {
         return TRADER_WITH_STOCK.getLabel() + trader;
     }
 
-    public static String tradeBC(String t1, String t2)
+    public static String tradeBroadCast(String t1, String t2)
     {
         return TRADE_SUCC.getLabel() + t1 + " " + t2;
     }
 
     public static String tradeUI(String t1, String t2)
     {
-        return String.format("%s  traded stock to $s", t1, t2);
+        return String.format("%s traded stock to %s", t1, t2);
     }
 
-    public static String tradeFailBC(String message)
+    public static String tradeFailBroadCast(String message)
     {
         return TRADE_FAIL.getLabel() + message;
     }
 
-    public static String traderIDBC(String id)
+    public static String traderIDBroadCast(String id)
     {
         return TRADER_ID.getLabel() + id;
     }
@@ -84,7 +84,7 @@ public enum Message
         return trader + " left.";
     }
 
-    public static String traderLeftBC(String trader)
+    public static String traderLeftBroadCast(String trader)
     {
         return TRADER_LEFT.getLabel() + trader;
     }
@@ -94,7 +94,7 @@ public enum Message
         return trader + " acquired the stock automatically";
     }
 
-    public static String traderAcqBC(String trader)
+    public static String traderAcqBroadCast(String trader)
     {
         return TRADER_ACQ_STOCK.getLabel() + trader;
     }

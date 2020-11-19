@@ -1,7 +1,6 @@
 package Client;
 
 import Server.Message;
-import com.sun.istack.internal.NotNull;
 
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -12,10 +11,10 @@ import static Server.Message.*;
 public class ClientHandler {
     private static final String DELIM = " ";
     private static Trader trader;
+    private static final Market market = new Market();
 
     private boolean serverReconnecting = false;
     private PrintWriter printWriter;
-    private Socket socket;
 
     public ClientHandler()
     {
@@ -23,13 +22,17 @@ public class ClientHandler {
 
     public void sendMessage(String message)
     {
-        if (serverReconnecting)
+        if (this.serverReconnecting || printWriter == null)
             return;
         this.printWriter.println(message);
     }
 
+    protected void trade(String traderID)
+    {
+        sendMessage(TRADER_TRADE.getLabel() + traderID);
+    }
 
-    protected Server.Message processLine(@NotNull String line)
+    protected Server.Message processLine(String line)
     {
         String arr[] = line.split(DELIM);
         if (arr.length <= 0)
@@ -38,55 +41,48 @@ public class ClientHandler {
         {
             arr[0] = "ERROR";
         }
-        switch (valueOf(arr[0]))
+        try
         {
-            case TRADER_ID:
-                if (errorStringArrLength(1, 3, arr))
+            switch (valueOf(arr[0]))
+            {
+                case TRADER_ID:
+                    initTrader(arr[1]);
+                    return TRADER_ID;
+                case TRADER_LIST:
+                    if (arr.length > 0)
+                        traderList(arr);
+                    return TRADER_LIST;
+                case TRADER_WITH_STOCK:
+                    ClientProgram.ui.setStockHolder(arr[1]);
+                    return TRADER_WITH_STOCK;
+                case TRADER_JOINED:
+                    traderJoined(arr[1]);
+                    return TRADER_JOINED;
+                case TRADER_LEFT:
+                    traderLeft(arr);
+                    return TRADER_LEFT;
+                case TRADE_SUCC:
+                    tradeSucc(arr[1], arr[2]);
+                    return TRADE_SUCC;
+                case TRADER_ACQ_STOCK:
+                    traderAcqStock(arr);
+                    return TRADER_ACQ_STOCK;
+                case SERVER_RESTORED:
+                    serverReconnecting = false;
+                    return SERVER_RESTORED;
+                default:
+                    String message = "";
+                    for (String string : arr)
+                        message += string + " ";
+                    errorOccured(message);
                     return ERROR;
-                initTrader(arr[1]);
-                return TRADER_ID;
-            case TRADER_LIST:
-                if (arr.length > 0)
-                    traderList(arr);
-                return TRADER_LIST;
-            case TRADER_WITH_STOCK:
-                if (errorStringArrLength(1, 3, arr))
-                    return ERROR;
-                //TODO:: implement
-                return TRADER_WITH_STOCK;
-            case TRADER_JOINED:
-                if (errorStringArrLength(1, 3, arr))
-                    return ERROR;
-                traderJoined(arr[1]);
-                return TRADER_JOINED;
-            case TRADER_LEFT:
-                if (errorStringArrLength(1, 3, arr))
-                    return ERROR;
-                traderLeft(arr);
-                return TRADER_LEFT;
-            case TRADE_FAIL:
-                tradeFailed(arr);
-                return TRADE_FAIL;
-            case TRADER_ACQ_STOCK:
-                if (errorStringArrLength(1, 3, arr))
-                    return ERROR;
-                traderAcqStock(arr);
-                return TRADER_ACQ_STOCK;
-            case SERVER_RESTORED:
-                serverReconnecting = false;
-                return SERVER_RESTORED;
-            default:
-                return ERROR;
+            }
         }
-    }
-
-    protected boolean errorStringArrLength(int lowerbound, int upperbound, String[] arr)
-    {
-        boolean response = arr.length <= lowerbound && arr.length >= upperbound;
-        if (response)
-            errorOccured(String.format("%s invalid response, %s%d arguments expected", arr[0],
-                    upperbound - lowerbound));
-        return response;
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            errorOccured(String.format("Failed to process: %s\nInvalid argument length", line));
+            return ERROR;
+        }
     }
 
     //TODO: implement setting me in ui
@@ -95,6 +91,7 @@ public class ClientHandler {
         ClientHandler.trader.setAccountID(traderid);
         ClientProgram.ui.addTrader(traderid);
         System.out.println("Account " + trader.getTraderID());
+        ClientProgram.ui.setTraderID(traderid);
     }
 
     protected void traderList(String[] arr)
@@ -118,6 +115,7 @@ public class ClientHandler {
         Trader trader = new Trader(arr[1]);
         String message = Message.traderAcqUI(trader.getTraderID());
         ClientProgram.ui.addMessage(message);
+        ClientProgram.ui.setStockHolder(arr[1]);
         System.out.println(message);
     }
 
@@ -140,26 +138,15 @@ public class ClientHandler {
         System.out.println(Message.traderJoinedUI(id));
     }
 
-    protected void tradeFailed(String[] arr)
+    protected void tradeSucc(String trader1, String trader2)
     {
-        String message = arr[0];
-        if (arr.length > 1)
-        {
-            message += " ";
-            for (int i = 1; i < arr.length; ++i)
-                message += " ";
-        }
-        ClientProgram.ui.addMessageError(message);
-    }
-
-    protected void giveStock(Trader trader)
-    {
-
+        ClientProgram.ui.addMessage(Message.tradeUI(trader1, trader2));
+        Market.attainedStock(new Trader(trader2));
+        ClientProgram.ui.setStockHolder(trader2);
     }
 
     protected void init(Socket socket) throws Exception{
-        this.socket = socket;
-        this.printWriter = new PrintWriter(socket.getOutputStream());
+        this.printWriter = new PrintWriter(socket.getOutputStream(), true);
         Scanner scanner = new Scanner(socket.getInputStream());
         if (ClientHandler.trader == null)
         {

@@ -1,37 +1,37 @@
 package Server;
 
+import Utils.ListLock;
+
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Trader {
     protected AtomicInteger deathIndicator = new AtomicInteger(0);
     private String traderID;
-    private ArrayList<String> outbox;
-    private Object outboxLock;
+    private ListLock<String> outbox;
 
 
     public Trader(String id)
     {
         this.traderID = id;
-        this.outbox = new ArrayList<>();
-        this.outboxLock = new Object();
+        this.outbox = new ListLock<>();
     }
 
     public void addMessage(String message)
     {
-        synchronized (outboxLock)
+        synchronized (outbox.getLock())
         {
-            this.outbox.add(message);
+            this.outbox.getList().add(message);
         }
     }
 
     public ArrayList<String> getMessages()
     {
         ArrayList<String> messages = new ArrayList<>();
-        synchronized (outbox)
+        synchronized (outbox.getLock())
         {
-            messages.addAll(outbox);
-            this.outbox.clear();
+            messages.addAll(outbox.getList());
+            this.outbox.getList().clear();
         }
         return messages;
     }
@@ -48,7 +48,7 @@ public class Trader {
         if (obj instanceof Trader)
         {
             Trader other = (Trader) obj;
-            return other.traderID == traderID;
+            return other.traderID.toUpperCase().equals(traderID.toUpperCase());
         }
         return false;
     }

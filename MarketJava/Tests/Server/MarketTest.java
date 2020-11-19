@@ -15,7 +15,7 @@ public class MarketTest {
     @Before
     public void init()
     {
-        Market.getTraders().second().clear();
+        Market.traders.getList().clear();
         Market.setStockHolder(null);
     }
 
@@ -43,30 +43,29 @@ public class MarketTest {
 
     @Test
     public void getTradersCorrectSizes() {
-        assertEquals(0, Market.getTraders().second().size());
+        assertEquals(0, Market.traders.getList().size());
         Market.newTrader();
         Market.newTrader();
         Market.newTrader();
-        assertEquals(3, Market.getTraders().second().size());
+        assertEquals(3, Market.traders.getList().size());
     }
 
     @Test
     public void getTradersLock() {
-        assertFalse(Thread.holdsLock(Market.getTraders().first()));
-        Pair<Object, ArrayList<Trader>> traders = Market.getTraders();
-        synchronized (traders.first())
+        assertFalse(Thread.holdsLock(Market.traders.getList()));
+        synchronized (Market.traders.getLock())
         {
-            assertTrue(Thread.holdsLock(traders.first()));
+            assertTrue(Thread.holdsLock(Market.traders.getLock()));
         }
         StoppableThread thread = new StoppableThread(() -> {
-            synchronized (traders.first())
+            synchronized (Market.traders.getLock())
             {
-                assertTrue(Thread.holdsLock(traders.first()));
+                assertTrue(Thread.holdsLock(Market.traders.getLock()));
                 while(StoppableThread.running);
             }
         });
         new Thread(thread).start();
-        assertFalse(Thread.holdsLock(traders.first()));
+        assertFalse(Thread.holdsLock(Market.traders.getLock()));
         thread.stop();
     }
 
@@ -75,7 +74,7 @@ public class MarketTest {
     {
         Trader trader = Market.newTrader().second();
         Market.removeTrader(trader);
-        assertFalse(Market.getTraders().second().contains(trader));
+        assertFalse(Market.traders.getList().contains(trader));
     }
 
     @Test
