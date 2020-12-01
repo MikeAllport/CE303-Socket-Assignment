@@ -1,12 +1,6 @@
 package Client;
 
-import java.io.PrintWriter;
-import java.io.Serializable;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Scanner;
-
-public class Trader implements Serializable {
+public class Trader {
     private String traderID;
 
     public Trader()

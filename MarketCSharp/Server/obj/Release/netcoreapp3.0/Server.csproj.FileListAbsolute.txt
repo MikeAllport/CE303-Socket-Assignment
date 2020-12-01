@@ -1,0 +1,15 @@
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\obj\Release\netcoreapp3.0\Server.csprojAssemblyReference.cache
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\obj\Release\netcoreapp3.0\Server.AssemblyInfoInputs.cache
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\obj\Release\netcoreapp3.0\Server.AssemblyInfo.cs
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Server.exe
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Server.deps.json
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Server.runtimeconfig.json
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Server.runtimeconfig.dev.json
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Server.dll
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Server.pdb
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Utils.dll
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Utils.pdb
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\obj\Release\netcoreapp3.0\Server.csproj.CopyComplete
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\obj\Release\netcoreapp3.0\Server.dll
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\obj\Release\netcoreapp3.0\Server.pdb
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Server\bin\Release\netcoreapp3.0\Newtonsoft.Json.dll

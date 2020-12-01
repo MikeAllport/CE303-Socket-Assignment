@@ -1,41 +1,46 @@
 package Server;
 
-import Utils.Pair;
 import Utils.StoppableThread;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import java.math.BigInteger;
 
 import static org.junit.Assert.*;
-import static Server.Message.*;
+import static Utils.Message.*;
 
 public class MarketTest {
 
     @Before
     public void init()
     {
+        resetMarket();
+    }
+
+    public static void resetMarket()
+    {
         Market.traders.getList().clear();
         Market.setStockHolder(null);
+        Market.currentTraderID = BigInteger.ZERO;
     }
 
     @Test
     public void newTraderStockHolderFirstTrader() {
-        Trader trader1 = Market.newTrader().second();
+        Trader trader1 = Market.getNewTrader().second();
         assertEquals(trader1, Market.getCurrentStockHolder());
-        assertNotEquals(Market.newTrader().second(), Market.getCurrentStockHolder());
+        assertNotEquals(Market.getNewTrader().second(), Market.getCurrentStockHolder());
     }
 
     @Test
     public void getCurrentStockHolder() {
         assertNull(Market.getCurrentStockHolder());
-        assertEquals(Market.newTrader().second(), Market.getCurrentStockHolder());
+        assertEquals(Market.getNewTrader().second(), Market.getCurrentStockHolder());
     }
 
     @Test
     public void setStockHolder() {
-        Market.newTrader();
-        Trader t = Market.newTrader().second();
+        Market.getNewTrader();
+        Trader t = Market.getNewTrader().second();
         assertNotEquals(t, Market.getCurrentStockHolder());
         Market.setStockHolder(t);
         assertEquals(t, Market.getCurrentStockHolder());
@@ -44,9 +49,9 @@ public class MarketTest {
     @Test
     public void getTradersCorrectSizes() {
         assertEquals(0, Market.traders.getList().size());
-        Market.newTrader();
-        Market.newTrader();
-        Market.newTrader();
+        Market.getNewTrader();
+        Market.getNewTrader();
+        Market.getNewTrader();
         assertEquals(3, Market.traders.getList().size());
     }
 
@@ -72,7 +77,7 @@ public class MarketTest {
     @Test
     public void marketRemoveTrader()
     {
-        Trader trader = Market.newTrader().second();
+        Trader trader = Market.getNewTrader().second();
         Market.removeTrader(trader);
         assertFalse(Market.traders.getList().contains(trader));
     }
@@ -80,7 +85,7 @@ public class MarketTest {
     @Test
     public void marketRemoveTraderRemovesStockHolder()
     {
-        Trader trader = Market.newTrader().second();
+        Trader trader = Market.getNewTrader().second();
         Market.removeTrader(trader);
         assertEquals(Market.getCurrentStockHolder(), null);
     }
@@ -88,8 +93,8 @@ public class MarketTest {
     @Test
     public void marketRemoveTraderGivesStockToOtherTrader()
     {
-        Trader t1 = Market.newTrader().second();
-        Trader t2 = Market.newTrader().second();
+        Trader t1 = Market.getNewTrader().second();
+        Trader t2 = Market.getNewTrader().second();
         assertEquals(t1, Market.getCurrentStockHolder());
         Market.removeTrader(t1);
         assertEquals(t2, Market.getCurrentStockHolder());

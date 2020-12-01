@@ -1,8 +1,15 @@
 package Utils;
 
-import java.util.ArrayList;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 
-public class ListLock<T> {
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListLock<T>{
     private ArrayList<T> list;
     private Object lock;
 
@@ -21,4 +28,5 @@ public class ListLock<T> {
     {
         return lock;
     }
+
 }

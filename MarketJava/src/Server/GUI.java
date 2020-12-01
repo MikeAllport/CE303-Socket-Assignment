@@ -177,6 +177,12 @@ public class GUI {
         window.pack();
     }
 
+    public void resetTraders()
+    {
+        traderList.clear();
+        traders.removeAll();
+    }
+
     public void close()
     {
         window.dispatchEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSING));

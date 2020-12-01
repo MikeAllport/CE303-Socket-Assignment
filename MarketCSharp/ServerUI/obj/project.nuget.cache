@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "uDpf9g15zWsvej8EygiAGZ+GOqnxmZnllffjf6LxwZVAwOZ23ijAB2cPuY0y/t91z4WlgfasdxRQaAbiDai4bQ==",
+  "success": true,
+  "projectFilePath": "E:\\M drive\\Third Year\\CE303_advanced_programming\\Assignment\\MarketCSharp\\ServerUI\\ServerUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mikeh n Mint\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Mikeh n Mint\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\Mikeh n Mint\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\Mikeh n Mint\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\Mikeh n Mint\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

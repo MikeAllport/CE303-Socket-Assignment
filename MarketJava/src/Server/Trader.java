@@ -1,12 +1,13 @@
 package Server;
 
 import Utils.ListLock;
-
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Trader {
+public class Trader{
     protected AtomicInteger deathIndicator = new AtomicInteger(0);
+    protected boolean reconnected = false;
     private String traderID;
     private ListLock<String> outbox;
 
@@ -45,11 +46,21 @@ public class Trader {
     public boolean equals(Object obj) {
         if (obj == this)
             return true;
-        if (obj instanceof Trader)
-        {
-            Trader other = (Trader) obj;
-            return other.traderID.toUpperCase().equals(traderID.toUpperCase());
-        }
-        return false;
+        if (!(obj instanceof Trader))
+            return false;
+        Trader other = (Trader) obj;
+        if (traderID == null || other.traderID == null)
+            return false;
+        return other.traderID.toUpperCase().equals(traderID.toUpperCase());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(traderID.toUpperCase());
+    }
+
+    @Override
+    public String toString() {
+        return traderID;
     }
 }

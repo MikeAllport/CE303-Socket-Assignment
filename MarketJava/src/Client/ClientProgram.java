@@ -3,13 +3,14 @@ package Client;
 import java.net.Socket;
 
 public class ClientProgram {
-    private final static String ADDRESS = "localhost";
-    private final static int PORT = 8888;
-    private final static String EXECUTABLE = "java.exe";
-    private final static String DIRECTORY = System.getProperty("user.dir") + "\\out\\";
-    private final static String SERVER_CLASS_NAME = "Server.ServerProgram";
-    private final static String UI_TITLE = "Client";
+    protected final static String ADDRESS = "localhost";
+    protected final static int PORT = 8888;
+    private final static String EXECUTABLE = "java.exe",
+            CLASS_PATH = "./libs/gson-2.8.2.jar;./out",
+            SERVER_CLASS_NAME = "Server.ServerProgram",
+            UI_TITLE = "Client";
     protected static Boolean socketClosed = false;
+
     protected final static GUI ui = new GUI(UI_TITLE);
 
     protected static ClientHandler handler;
@@ -20,12 +21,12 @@ public class ClientProgram {
         initSocket();
     }
 
-    private void initSocket()
+    protected void initSocket()
     {
         try
         {
             Socket socket = new Socket(ADDRESS, PORT);
-            initClientHandler(socket);
+            ClientProgram.handler.init(socket);
             while(!ClientProgram.socketClosed)
             {
                 Thread.sleep(60);
@@ -35,8 +36,9 @@ public class ClientProgram {
         {
             try
             {
-                Market.marketCrash();
+                ui.resetTraders();
                 restartServer();
+                initSocket();
             } catch (ServerIrreparableException serverError)
             {
                 serverError.printStackTrace();
@@ -44,32 +46,26 @@ public class ClientProgram {
         }
     }
 
-    private void initClientHandler(Socket socket) throws Exception
-    {
-        ClientProgram.handler.init(socket);
-    }
-
-    private void restartServer() throws ServerIrreparableException
+    protected static void restartServer() throws ServerIrreparableException
     {
         try
         {
             String attempt = "Server restart attempt 1";
             System.out.println(attempt);
-            runServerSeparateProcess(ClientProgram.EXECUTABLE, ClientProgram.DIRECTORY,
+            runServerSeparateProcess(ClientProgram.EXECUTABLE, ClientProgram.CLASS_PATH,
                     ClientProgram.SERVER_CLASS_NAME);
-            Thread.sleep(60);
+            Thread.sleep(1000);
             ClientProgram.socketClosed = false;
-            initSocket();
         } catch (Exception e)
         {
             throw new ServerIrreparableException("Failed to restart server during thread sleep");
         }
     }
 
-    public static void runServerSeparateProcess(String executable, String dir, String className)
+    public static void runServerSeparateProcess(String executable, String classpath, String className)
             throws Exception
     {
-        ProcessBuilder p = new ProcessBuilder(executable, "-cp", dir, className);
+        ProcessBuilder p = new ProcessBuilder(executable, "-cp", classpath, className, "restore");
         p.start();
     }
 

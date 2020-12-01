@@ -7,6 +7,7 @@ public class SocketListener implements Runnable{
     private final Scanner scanner;
     private final ClientHandler handler;
 
+
     public SocketListener(Scanner scanner, ClientHandler handler)
     {
         this.scanner = scanner;

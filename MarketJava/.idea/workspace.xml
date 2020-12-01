@@ -20,33 +20,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c410310-0a56-4d1d-a864-9e3569efa4c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/ListLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MarketJava.eml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Client/ClientHandlerStub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Client/ClientHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Server/ServerProgramTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MarketJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MarketJava.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/Server/MarketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/MarketTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Server/TraderHandlerStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/TraderHandlerStub.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/Server/TraderHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/TraderHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ClientHandler$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/ClientProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ClientProgram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/GUI$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Client/Market.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/Market.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Client/Market.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Client/ServerIrreparableException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ServerIrreparableException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Client/SocketListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/SocketListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Client/Trader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/Trader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/GUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/Market.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/Market.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Server/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Server/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Server/OutboxChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/OutboxChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Server/ServerProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/ServerProgram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/Trader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/Trader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/TraderHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/TraderHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Utils/ListLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Utils/ListLock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Utils/Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Utils/Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Utils/StoppableThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Utils/StoppableThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Server/MarketTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Server/MarketTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Server/TraderHandlerStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Server/TraderHandlerStub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Server/TraderHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Server/TraderHandlerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ClientProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Market.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/SocketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/SocketListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Trader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Market.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Trader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/TraderHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/TraderHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../New WinRAR ZIP archive.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/ListLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ListLock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +97,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/gson-2.8.2.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -88,6 +106,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Client" />
       <recent name="Server" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -103,24 +122,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.ClientProgram">
-    <configuration name="ClientProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientProgram" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.ClientProgram" />
       <module name="MarketJava" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerProgram (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server.ServerProgram" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,54 +148,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
+    <configuration name="ClientHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarketJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Client" />
+      <option name="MAIN_CLASS_NAME" value="Client.ClientHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MarketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientHandlerTest.traderTradeFailNotBeenAssignedID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarketJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Server.*" />
+          <option name="PATTERN" value="Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Client" />
+      <option name="MAIN_CLASS_NAME" value="Client.ClientHandlerTest" />
+      <option name="METHOD_NAME" value="traderTradeFailNotBeenAssignedID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerProgramTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarketJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Server" />
-      <option name="MAIN_CLASS_NAME" value="Server.MarketTest" />
+      <option name="MAIN_CLASS_NAME" value="Server.ServerProgramTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TraderHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MarketJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Server" />
-      <option name="MAIN_CLASS_NAME" value="Server.TraderHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.ClientProgram" />
+      <item itemvalue="Application.ServerProgram" />
+      <item itemvalue="JUnit.ClientHandlerTest" />
+      <item itemvalue="JUnit.ClientHandlerTest.traderTradeFailNotBeenAssignedID" />
+      <item itemvalue="JUnit.ServerProgramTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ClientProgram" />
         <item itemvalue="Application.ServerProgram" />
-        <item itemvalue="JUnit.TraderHandlerTest" />
-        <item itemvalue="JUnit.MarketTest" />
-        <item itemvalue="Application.ServerProgram (1)" />
+        <item itemvalue="JUnit.ClientHandlerTest" />
+        <item itemvalue="JUnit.ClientHandlerTest.traderTradeFailNotBeenAssignedID" />
+        <item itemvalue="JUnit.ServerProgramTest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +228,16 @@
       <workItem from="1605184183506" duration="56414000" />
       <workItem from="1605623536087" duration="2281000" />
       <workItem from="1605694632095" duration="614000" />
-      <workItem from="1605803985962" duration="2547000" />
+      <workItem from="1605803985962" duration="5280000" />
+      <workItem from="1605828086783" duration="6000" />
+      <workItem from="1605886529208" duration="5451000" />
+      <workItem from="1606011760338" duration="5001000" />
+      <workItem from="1606062890144" duration="11948000" />
+      <workItem from="1606075070429" duration="14525000" />
+      <workItem from="1606181964438" duration="34292000" />
+      <workItem from="1606571341628" duration="5528000" />
+      <workItem from="1606744164232" duration="214000" />
+      <workItem from="1606848071252" duration="509000" />
     </task>
     <servers />
   </component>
@@ -233,54 +261,62 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="712" y="344" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1605025882671" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1605289457141">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606297122630">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605289457141" />
-    <state x="743" y="385" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605127239134">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606297122630" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1606119379420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="743" y="385" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1605127239134" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606119379420" />
+    <state x="743" y="385" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606298123798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="385" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1606298123798" />
     <state x="597" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605184495414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="597" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605184495414" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1605207258951">
+    <state width="408" height="466" key="DebuggerActiveHint" timestamp="1606083379788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605207258951" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1605806553806">
+    <state width="408" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1606083379788" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606069839147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1605806553806">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606069839147" />
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1606606583802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1605806553806">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1606606583802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1605806553806">
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1606606583802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1605806553806">
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1606606583802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1605806553806">
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1606181926212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1605806553806">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606181926212" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1606181926212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1605806553806">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606181926212" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1606181926212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605806553806" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606181926212" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1606181926212">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606181926212" />
     <state width="1877" height="348" key="GridCell.Tab.2.bottom" timestamp="1605037767568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -297,10 +333,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605037767568" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1605293428257">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1606070571732">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605293428257" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606070571732" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1605295930489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -313,10 +349,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605126342627" />
-    <state x="1030" y="219" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1605208548096">
+    <state x="1030" y="219" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1606077558676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1030" y="219" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605208548096" />
+    <state x="1030" y="219" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606077558676" />
     <state x="689" y="284" key="extract.method.dialog" timestamp="1605136458068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -329,28 +365,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605275501465" />
-    <state x="622" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1605288113536">
+    <state x="622" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1606297075676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="622" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605288113536" />
+    <state x="622" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606297075676" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/Message.java</url>
-          <line>21</line>
+          <url>file://$PROJECT_DIR$/src/Utils/Message.java</url>
+          <line>22</line>
           <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Client/ClientHandler.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Client/ClientHandler.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client/GUI.java</url>
@@ -358,47 +384,27 @@
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Client/ClientHandler.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="87" />
+          <url>file://$PROJECT_DIR$/src/Server/ServerProgram.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Server/TraderHandler.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="90" />
+          <line>85</line>
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/TraderHandler.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/TraderHandler.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/TraderHandler.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/TraderHandler.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/Market.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/Market.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="96" />
+          <url>file://$PROJECT_DIR$/Tests/Client/ClientHandlerStub.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="serverResponse" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MarketServerJava$TraderHandlerTest.ic" NAME="TraderHandlerTest Coverage Results" MODIFIED="1605028499771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

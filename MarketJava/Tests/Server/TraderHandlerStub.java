@@ -4,7 +4,7 @@ public class TraderHandlerStub extends TraderHandler{
 
     TraderHandlerStub(Market market)
     {
-        super(null, market);
+        super(null);
     }
 
     @Override
