@@ -1,14 +1,11 @@
 package Utils;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * ListLocks main purpose is for thread safety, any classes using lists where concurrency isVC34
+ * @param <T> - The type of objects the list contains
+ */
 public class ListLock<T>{
     private ArrayList<T> list;
     private Object lock;

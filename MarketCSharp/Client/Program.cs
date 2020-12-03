@@ -24,7 +24,6 @@ namespace Client
         // and whether the socket encountered an error
         public static bool SocketClosed = false;
         public static bool applicationClosed = false;
-        private static bool runViaCLI = false;
 
         // Server file path is from a given compiled directory i.e 
         // {ProjectDIR}\Client\bin\Release\netcoreapp3.0\compiled now points
@@ -34,7 +33,7 @@ namespace Client
                 "Debug\\netcoreapp3.0\\ServerUI.exe"));
 
         // instantiates marker and handler
-        public static void InitSocket()
+        public static void Run()
         {
             if (Market == null)
                 _market = new Market();
@@ -45,17 +44,9 @@ namespace Client
             {
                 _handler = new Handler(_market);
             } catch (Exception ignore) {
-                SocketClosed = true;
+                Console.WriteLine("Server not running, restarting server");
                 RestartServer();
             }
-        }
-
-        // This is mainly used for testing purposes and console applications
-        // not required with UI to keep thread alive
-        public static void Run()
-        {
-            runViaCLI = true;
-            while (!SocketClosed) { }
         }
 
         // main code for restarting the server
@@ -65,12 +56,9 @@ namespace Client
             {
                 System.Diagnostics.Process.Start(SERVER_LOCATION_FROM_COMPILED_PATH, "Restore");
                 SocketClosed = false;
+                Handler.ServerReconnecting = true;
                 Thread.Sleep(1000);
-                InitSocket();
-                if (runViaCLI)
-                {
-                    Run();
-                }
+                Run();
             } catch (System.ComponentModel.Win32Exception e)
             {
                 Console.WriteLine("Could not find server executable to restore");

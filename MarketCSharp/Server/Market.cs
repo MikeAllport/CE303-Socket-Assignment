@@ -156,10 +156,10 @@ namespace Server
             trader.KillTrader();
             Console.WriteLine(Message.traderLeftUI(trader.ID));
             BroadCastMessage(Message.traderLeftBroadCast(trader.ID));
-            AddMarketMessage(Message.traderLeftUI(trader.ID));
             lock(traderListLock)
             {
-                _traderList.Remove(trader);
+                if (_traderList.Remove(trader))
+                    AddMarketMessage(Message.traderLeftUI(trader.ID));
             }
             // resets stock holder if trader leaving is stock holder
             lock (stockHolderLock)
@@ -189,7 +189,7 @@ namespace Server
             if (!HasTrader(testTrader))
             {
                 var tradersAndTrader = GetNewTrader();
-                tradersAndTrader.Second.Reconected = true;
+                tradersAndTrader.Second.Reconnected = true;
                 return tradersAndTrader;
             }
 
@@ -203,7 +203,7 @@ namespace Server
                         traderToReturn = trader;
                     else
                         otherTraders.Add(trader.ID);
-                traderToReturn.Reconected = true;
+                traderToReturn.Reconnected = true;
                 return new Pair<List<string>, Trader>(otherTraders, traderToReturn);
             }
         }
@@ -213,7 +213,7 @@ namespace Server
         {
             var traders = GetTraderListCopy();
             foreach (var trader in traders)
-                if (!trader.Reconected)
+                if (!trader.Reconnected)
                     KillTrader(trader);
         }
 

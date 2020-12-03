@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Trader's purpose is to contain a traders id, logic for adding messages to its outbox which is populated through
+ * the handlers static broadcast method, and contain a death indicator which is only checked when trading stock in the
+ * market
+ */
 public class Trader{
     protected AtomicInteger deathIndicator = new AtomicInteger(0);
     protected boolean reconnected = false;

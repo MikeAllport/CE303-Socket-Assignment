@@ -6,6 +6,15 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.util.*;
 
+/**
+ * GUI's responsibility is for creating the user interface panel and containing synchronized methods
+ * for client threads and ServerProgram to add traders/ui messages to interface.
+ *
+ * This works by containing a treemap of traders, for every ClientHandler instantiated and trader created
+ * they add traders to this list with addTrader method. All threads can call addMessage to add ui related
+ * messages which are stored in JLabel array. When server is reset, resetTraders() is called to empty the trader
+ * list, and all traders are re-added when they have connected;
+ */
 public class GUI {
     private ServerProgram program;
     protected JFrame window;
@@ -23,6 +32,7 @@ public class GUI {
     {
         this.messages = new ArrayList<>();
         this.window = new JFrame(title);
+        this.window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.window.setLayout(new BorderLayout());
         this.broadcast = new JPanel();
         this.traders = new JPanel();

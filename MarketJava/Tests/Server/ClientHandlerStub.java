@@ -1,8 +1,8 @@
 package Server;
 
-public class TraderHandlerStub extends TraderHandler{
+public class ClientHandlerStub extends ClientHandler {
 
-    TraderHandlerStub(Market market)
+    ClientHandlerStub(Market market)
     {
         super(null);
     }

@@ -20,51 +20,155 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c410310-0a56-4d1d-a864-9e3569efa4c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MarketJava.eml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/Client/ClientHandlerStub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/Client/ClientHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/Server/ServerProgramTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientCsharp.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientCsharp.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientJava.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientJava.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketBackup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketBackup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/.vs/MarketCSharp/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/.vs/MarketCSharp/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/Handler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/SocketListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/SocketListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Client.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Client/obj/Debug/netcoreapp3.0/Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Client.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/ClientTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/ClientTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/ClientTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/ClientTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientTest/obj/Debug/netcoreapp3.0/ClientTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/ClientGooey.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/ClientGooey.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/ClientGooey.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/ClientGooey.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Client.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Client.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Client.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/ClientUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/ClientUI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/ClientUI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/ClientUI.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/ClientUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/ClientUI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/App.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientGooey.baml" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientGooey.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientGooey.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientGooey.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientGooey.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientGooey.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI_MarkupCompile.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI_MarkupCompile.i.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI_MarkupCompile.i.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ClientUI/obj/Debug/netcoreapp3.0/ClientUI_MarkupCompile.i.lref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/ClientHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/ClientHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/Market.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/Market.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/Server.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/Trader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/Trader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Server/obj/Debug/netcoreapp3.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/MarketTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/MarketTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/ServerTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/ServerTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/ServerTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/ServerTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerTest/obj/Debug/netcoreapp3.0/ServerTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/ServerGooey.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/ServerGooey.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/ServerUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/ServerUI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/ServerUI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/ServerUI.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/ServerUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/ServerUI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/App.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerGooey.baml" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerGooey.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerGooey.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerGooey.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerGooey.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerGooey.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI_MarkupCompile.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI_MarkupCompile.i.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI_MarkupCompile.i.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/ServerUI/obj/Debug/netcoreapp3.0/ServerUI_MarkupCompile.i.lref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Utils/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Utils/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Utils/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Utils/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Utils/obj/Debug/netcoreapp3.0/Utils.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Utils/obj/Debug/netcoreapp3.0/Utils.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Utils/obj/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Utils/obj/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/Utils/obj/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/Utils/obj/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/Utils.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/Utils.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/Utils.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/Utils.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/UtilsTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/UtilsTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/UtilsTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/bin/Debug/netcoreapp3.0/UtilsTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../MarketCSharp/UtilsTest/obj/Debug/netcoreapp3.0/UtilsTest.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarketJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MarketJava.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Server/MarketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/MarketTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Server/TraderHandlerStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/TraderHandlerStub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Server/TraderHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/TraderHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Server/TraderHandlerStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/ClientHandlerStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Server/TraderHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Server/ClientHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/ClientHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ClientHandler$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/ClientProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ClientProgram.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Client/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Client/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Client/Market.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Client/ServerIrreparableException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/ServerIrreparableException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Client/SocketListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/SocketListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Client/Trader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Client/Trader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/GUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/Market.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/Market.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Server/Message.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/OutboxChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/OutboxChecker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/ServerProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/ServerProgram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Server/Trader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/Trader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Server/TraderHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Server/TraderHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Server/TraderHandler$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Server/TraderHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/Utils/ListLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Utils/ListLock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Utils/Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Utils/Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/Utils/StoppableThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Utils/StoppableThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Server/MarketTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Server/MarketTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Server/TraderHandlerStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Server/TraderHandlerStub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Server/TraderHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Server/TraderHandlerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/Utils/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/Utils/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Server/TraderHandlerStub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Server/TraderHandlerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/ClientProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/ClientProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Market.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/SocketListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/SocketListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Trader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Market.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/OutboxChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/OutboxChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Trader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/TraderHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/TraderHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/TraderHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils/ListLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/ListLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/StoppableThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/StoppableThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerJava.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +248,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -238,6 +353,8 @@
       <workItem from="1606571341628" duration="5528000" />
       <workItem from="1606744164232" duration="214000" />
       <workItem from="1606848071252" duration="509000" />
+      <workItem from="1606848887543" duration="1380000" />
+      <workItem from="1606907036945" duration="15580000" />
     </task>
     <servers />
   </component>
@@ -273,10 +390,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="385" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1606298123798" />
-    <state x="597" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605184495414">
+    <state x="597" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606939206904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="597" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605184495414" />
+    <state x="597" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606939206904" />
     <state width="408" height="466" key="DebuggerActiveHint" timestamp="1606083379788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -285,22 +402,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606069839147" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1606606583802">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1607029381330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1606606583802">
+    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607029381330" />
+    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1607029381330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1606606583802">
+    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607029381330" />
+    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1607029381330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1606606583802">
+    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607029381330" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1607029381330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606606583802" />
+    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607029381330" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1606181926212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -375,7 +492,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Utils/Message.java</url>
-          <line>22</line>
+          <line>34</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -385,11 +502,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Server/ServerProgram.java</url>
-          <line>129</line>
+          <line>149</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Server/TraderHandler.java</url>
+          <url>file://$PROJECT_DIR$/src/Server/ClientHandler.java</url>
           <line>85</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>

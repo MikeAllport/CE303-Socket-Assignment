@@ -12,16 +12,19 @@ public class ClientProgram {
     protected static Boolean socketClosed = false;
 
     protected final static GUI ui = new GUI(UI_TITLE);
-
     protected static ClientHandler handler;
+
+    public static void main(String[] args) {
+        new ClientProgram();
+    }
 
     public ClientProgram()
     {
         ClientProgram.handler = new ClientHandler();
-        initSocket();
+        run();
     }
 
-    protected void initSocket()
+    protected void run()
     {
         try
         {
@@ -38,7 +41,7 @@ public class ClientProgram {
             {
                 ui.resetTraders();
                 restartServer();
-                initSocket();
+                run();
             } catch (ServerIrreparableException serverError)
             {
                 serverError.printStackTrace();
@@ -51,10 +54,10 @@ public class ClientProgram {
         try
         {
             String attempt = "Server restart attempt 1";
+            Thread.sleep(1000);
             System.out.println(attempt);
             runServerSeparateProcess(ClientProgram.EXECUTABLE, ClientProgram.CLASS_PATH,
                     ClientProgram.SERVER_CLASS_NAME);
-            Thread.sleep(1000);
             ClientProgram.socketClosed = false;
         } catch (Exception e)
         {
@@ -67,9 +70,5 @@ public class ClientProgram {
     {
         ProcessBuilder p = new ProcessBuilder(executable, "-cp", classpath, className, "restore");
         p.start();
-    }
-
-    public static void main(String[] args) {
-        new ClientProgram();
     }
 }

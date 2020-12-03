@@ -95,3 +95,5 @@ E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerT
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerTest\obj\Debug\netcoreapp3.0\ServerTest.dll
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerTest\obj\Debug\netcoreapp3.0\ServerTest.pdb
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerTest\bin\Debug\netcoreapp3.0\Server.exe
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerTest\obj\Debug\netcoreapp3.0\ServerTest.csproj.CoreCompileInputs.cache
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerTest\obj\Debug\netcoreapp3.0\ServerTest.genruntimeconfig.cache

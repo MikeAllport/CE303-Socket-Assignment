@@ -9,7 +9,14 @@ import java.lang.reflect.Type;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
-
+/**
+ * Market's purpose is to store an active list of all conected traders and contain logic related to
+ * creating a new trader. All ClientHandlers have to call static getNewTrader method to attain a new trader,
+ * that way this class is solely responsible for incrementing and handling the trader id.
+ *
+ * BigInteger is used for a boundless ID number. This class is fully serializable with custom serializing
+ * implementations. This class is also thread safe with any methods accessing the traders list being synchronised.
+ */
 public class Market implements JsonSerializer<Market>, JsonDeserializer {
     private static final String JSON_TRADER_LIST_KEY = "Traders",
             JSON_CURRENT_ID = "CurrentID",
@@ -18,14 +25,8 @@ public class Market implements JsonSerializer<Market>, JsonDeserializer {
     protected static BigInteger currentTraderID = BigInteger.ZERO;
     protected static ListLock<Trader> traders = new ListLock<>();
 
-    private static String getNewTraderID()
-    {
-        String id = "Trader" + currentTraderID;
-        currentTraderID = currentTraderID.add(BigInteger.ONE);
-        System.out.println(Message.traderJoinedUI(id));
-        return id;
-    }
-
+    // main method for trader creation, returns a pair containing a list of the currently connected clients ids
+    // as first in pair and the new trader as second in pair. Also assigns stockholder if stockholder is null
     public static synchronized Pair<ArrayList<String>, Trader> getNewTrader()
     {
         Trader trader = new Trader(getNewTraderID());
@@ -43,6 +44,18 @@ public class Market implements JsonSerializer<Market>, JsonDeserializer {
         return new Pair<>(currentTraders, trader);
     }
 
+    // method responsible for incrementing the trader id number. As getNewTrader is synchronized this does not have
+    // to be
+    private static String getNewTraderID()
+    {
+        String id = "Trader" + currentTraderID;
+        currentTraderID = currentTraderID.add(BigInteger.ONE);
+        System.out.println(Message.traderJoinedUI(id));
+        return id;
+    }
+
+    // finds an existing trader to return, or returns a new trader id if the given argument id is not found
+    // return type is the same as getNewTrader with a pair containing current trader ids and new/existing trader
     public static Pair<ArrayList<String>, Trader> getReturningTrader(String traderID)
     {
         Trader traderToReturn = null;
@@ -64,6 +77,8 @@ public class Market implements JsonSerializer<Market>, JsonDeserializer {
         return new Pair<>(existingTraderIDs, traderToReturn);
     }
 
+    // logic for removing a trader from market. This checks if the trader being removed is the stock holder,
+    // if so gives the stock to a random trader in the list or sets to null and handles message broadcasting
     public static void removeTrader(Trader trader)
     {
         System.out.println(Message.traderLeftUI(trader.getID()));
@@ -80,13 +95,15 @@ public class Market implements JsonSerializer<Market>, JsonDeserializer {
                             Market.traders.getList().size()));
                     setStockHolder(randomTrader);
                     ServerProgram.ui.addMessage(Message.traderAcqUI(randomTrader.getID()));
-                    TraderHandler.broadcast(Message.traderAcqBroadCast(randomTrader.getID()));
+                    ClientHandler.broadcast(Message.traderAcqBroadCast(randomTrader.getID()));
                     System.out.println(Message.traderAcqUI(randomTrader.getID()));
                 }
             }
         }
     }
 
+    // method called when server restoring has finished, this clears out any traders who has not reconnected
+    // with the reconnected control boolean in trader
     public static void cleanTradersNotReconnected()
     {
         ArrayList<Trader> disconnectedTraderList = new ArrayList<>();
@@ -101,7 +118,7 @@ public class Market implements JsonSerializer<Market>, JsonDeserializer {
             String disconnectingTrader = String.format("Disconnecting trader %s", disconnectedTrader.getID());
             ServerProgram.ui.addMessage(disconnectingTrader);
             removeTrader(disconnectedTrader);
-            TraderHandler.broadcast(Message.traderLeftBroadCast(disconnectedTrader.getID()));
+            ClientHandler.broadcast(Message.traderLeftBroadCast(disconnectedTrader.getID()));
         }
     }
 
@@ -116,6 +133,7 @@ public class Market implements JsonSerializer<Market>, JsonDeserializer {
     }
 
 
+    // serialization/deserialization methods in format interchangeable with csharp and java implementation
     @Override
     public JsonElement serialize(Market o, Type type, JsonSerializationContext jsonSerializationContext) {
         JsonObject marketJson = new JsonObject();

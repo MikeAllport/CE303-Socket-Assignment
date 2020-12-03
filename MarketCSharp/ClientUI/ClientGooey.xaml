@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ClientUI"
         mc:Ignorable="d"
         Title="Trader Client" Height="475" Width="800"
-        Closing="Window_Closing" Closed="Window_Closed">
+        Closing="Window_Closing" Closed="Window_Closed" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="TraderBut" TargetType="Button">
             <Setter Property="Height" Value="20" />

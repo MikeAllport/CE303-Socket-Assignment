@@ -1,4 +1,5 @@
 @ECHO OFF
 cd MarketJava
-java -cp "./libs/gson-2.8.2.jar;./out" Client.ClientProgram
+start java -cp "./libs/gson-2.8.2.jar;./out" Client.ClientProgram
+TIMEOUT 1
 @ECHO ON

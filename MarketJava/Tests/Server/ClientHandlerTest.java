@@ -7,9 +7,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static Utils.Message.*;
 
-public class TraderHandlerTest {
+public class ClientHandlerTest {
     Market market = new Market();
-    TraderHandlerStub handler = new TraderHandlerStub(market);
+    ClientHandlerStub handler = new ClientHandlerStub(market);
 
     @Before
     public void init()

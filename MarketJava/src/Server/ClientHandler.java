@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import static Utils.Message.*;
 
-public class TraderHandler implements Runnable{
+public class ClientHandler implements Runnable{
     protected Scanner scanner;
     protected PrintWriter printWriter;
 
@@ -18,7 +18,7 @@ public class TraderHandler implements Runnable{
     protected Trader trader = null;
     private final Socket socket;
 
-    public TraderHandler(Socket socket)
+    public ClientHandler(Socket socket)
     {
         this.socket = socket;
     }

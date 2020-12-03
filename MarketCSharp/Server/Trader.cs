@@ -16,7 +16,7 @@ namespace Server
         private string _ID; // trader id
         private int deathIndicator = 0; // indicates if trader disconnected
         private bool _reconnected; // indicates if trader is a reconnected one for server restoration
-        public bool Reconected { get { return _reconnected; } set { _reconnected = value; } }
+        public bool Reconnected { get { return _reconnected; } set { _reconnected = value; } }
 
         public int DeathIndicator { get { return deathIndicator; } }
 

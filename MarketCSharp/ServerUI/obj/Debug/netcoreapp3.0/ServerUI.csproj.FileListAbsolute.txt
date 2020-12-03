@@ -22,3 +22,5 @@ E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerU
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerUI\obj\Debug\netcoreapp3.0\ServerUI.dll
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerUI\obj\Debug\netcoreapp3.0\ServerUI.pdb
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerUI\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerUI\obj\Debug\netcoreapp3.0\ServerUI.csproj.CoreCompileInputs.cache
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ServerUI\obj\Debug\netcoreapp3.0\ServerUI.genruntimeconfig.cache

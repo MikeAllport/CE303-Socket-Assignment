@@ -5,3 +5,4 @@ E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Utils\b
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Utils\bin\Debug\netcoreapp3.0\Utils.pdb
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Utils\obj\Debug\netcoreapp3.0\Utils.dll
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Utils\obj\Debug\netcoreapp3.0\Utils.pdb
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\Utils\obj\Debug\netcoreapp3.0\Utils.csproj.CoreCompileInputs.cache

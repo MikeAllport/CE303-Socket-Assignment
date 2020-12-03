@@ -1,21 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Client;
 using System.Windows.Threading;
-using System.Threading;
 using Utils;
+using System.Threading;
 
 namespace ClientUI
 {
@@ -28,7 +18,7 @@ namespace ClientUI
         public ClientGooey()
         {
             InitializeComponent();
-            Program.InitSocket();
+            Program.Run();
             lastCheckedTraderList = Program.Market.TradersListCopy;
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(0.5);
@@ -92,6 +82,9 @@ namespace ClientUI
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            Hide();
+            if (Handler.ServerReconnecting)
+                Thread.Sleep(3000);
             if (Program.Handler != null)
                 Program.Handler.Dispose();
             Program.applicationClosed = true;

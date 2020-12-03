@@ -30,21 +30,19 @@ namespace Server
         // main initiation logic called from Thread().Start()
         public void HandleIncomingMessages(object param)
         {
-            tcpClient = (TcpClient)param;
-            Stream stream = tcpClient.GetStream();
+            tcpClient = (TcpClient)param;           
+            try
             {
-                try
-                {
-                    writer = new StreamWriter(stream);
-                    writer.AutoFlush = true;
-                    reader = new StreamReader(stream);
-                    SendWelcomeMessage();
-                    StartListening();
-                }
-                catch (Exception e)
-                {
-                    CloseConnection();
-                }
+                Stream stream = tcpClient.GetStream();
+                writer = new StreamWriter(stream);
+                writer.AutoFlush = true;
+                reader = new StreamReader(stream);
+                SendWelcomeMessage();
+                StartListening();
+            }
+            catch (Exception e)
+            {
+                CloseConnection();
             }
         }
 
@@ -68,12 +66,18 @@ namespace Server
             while(true)
             {
                 string line = reader.ReadLine();
+                if (line == null)
+                {
+                    throw new Exception();
+                }
                 ProcessLine(line);
             }
         }
 
         protected void CloseConnection()
         {
+            if (Trader != null)
+                Trader.Reconnected = false;
             Market.KillTrader(Trader);
             try
             {
@@ -146,7 +150,7 @@ namespace Server
         {
             this._trader = tradersListAndNewTrader.Second;
             if (Program.IsRestarting)
-                _trader.Reconected = true;
+                _trader.Reconnected = true;
             SendMessage(Message.traderIDBroadCast(_trader.ID));
             SendOtherTraderList(tradersListAndNewTrader.First);
             Trader stockHolder = Market.StockHolder;
@@ -195,15 +199,19 @@ namespace Server
 
         public void Dispose()
         {
-            if (tcpClient != null)
+            try
             {
-                tcpClient.GetStream().Close();
-                tcpClient.Close();
+                if (tcpClient != null)
+                {
+                    tcpClient.GetStream().Close();
+                    tcpClient.Close();
+                }
+                if (writer != null)
+                    writer.Close();
+                if (reader != null)
+                    reader.Close();
             }
-            if (writer != null)
-                writer.Close();
-            if (reader != null)
-                reader.Close();
+            catch (Exception) { }
         }
     }
 }

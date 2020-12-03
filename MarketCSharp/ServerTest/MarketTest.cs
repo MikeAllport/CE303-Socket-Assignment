@@ -130,10 +130,10 @@ namespace ServerTest
         {
             Trader t1 = Market.GetNewTrader().Second;
             Trader t2 = Market.GetNewTrader().Second;
-            Assert.IsFalse(t1.Reconected);
+            Assert.IsFalse(t1.Reconnected);
             var t1ReconnectedAndList = Market.GetReconnectingTrader(t1.ID);
             Assert.AreEqual(t1, t1ReconnectedAndList.Second);
-            Assert.IsTrue(t1.Reconected);
+            Assert.IsTrue(t1.Reconnected);
             Assert.IsTrue(t1ReconnectedAndList.First.Contains(t2.ID));
         }
 
@@ -147,7 +147,7 @@ namespace ServerTest
             Assert.AreNotEqual(t2, t1ReconnectedAndList.Second);
             Assert.IsTrue(t1ReconnectedAndList.First.Contains(t1.ID));
             Assert.IsTrue(t1ReconnectedAndList.First.Contains(t1.ID));
-            Assert.IsTrue(t1ReconnectedAndList.Second.Reconected = true);
+            Assert.IsTrue(t1ReconnectedAndList.Second.Reconnected = true);
         }
 
         [TestMethod]
@@ -158,9 +158,9 @@ namespace ServerTest
             Trader t3 = Market.GetNewTrader().Second;
             t1 = Market.GetReconnectingTrader(t1.ID).Second;
             t2 = Market.GetReconnectingTrader(t2.ID).Second;
-            Assert.IsTrue(t1.Reconected);
-            Assert.IsTrue(t2.Reconected);
-            Assert.IsFalse(t3.Reconected);
+            Assert.IsTrue(t1.Reconnected);
+            Assert.IsTrue(t2.Reconnected);
+            Assert.IsFalse(t3.Reconnected);
             Market.KickDisconnectedTraders();
             Assert.IsTrue(Market.HasTrader(t1));
             Assert.IsTrue(Market.HasTrader(t2));

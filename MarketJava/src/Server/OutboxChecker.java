@@ -2,9 +2,14 @@ package Server;
 
 import java.util.ArrayList;
 
+/**
+ * OutboxChecker's sole responsibility is for checking if a trader has any messages in their outbox,
+ * which is populated through server broadcasts, and if there are any messages it sends them through to the
+ * associated handler's sendMessage function
+ */
 public class OutboxChecker implements Runnable {
-    TraderHandler handler;
-    public OutboxChecker(TraderHandler handler)
+    ClientHandler handler;
+    public OutboxChecker(ClientHandler handler)
     {
         this.handler = handler;
     }

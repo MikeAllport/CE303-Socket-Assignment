@@ -98,3 +98,5 @@ E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ClientT
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ClientTest\obj\Debug\netcoreapp3.0\ClientTest.dll
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ClientTest\obj\Debug\netcoreapp3.0\ClientTest.pdb
 E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ClientTest\bin\Debug\netcoreapp3.0\Client.exe
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ClientTest\obj\Debug\netcoreapp3.0\ClientTest.csproj.CoreCompileInputs.cache
+E:\M drive\Third Year\CE303_advanced_programming\Assignment\MarketCSharp\ClientTest\obj\Debug\netcoreapp3.0\ClientTest.genruntimeconfig.cache

@@ -26,6 +26,29 @@ namespace Server
         private static readonly string BACKUP_FILE_PATH = 
             Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\..\\MarketBackup.json"));
 
+        public static void Main(string[] args)
+        {
+            if (args.Length != 0 && Equals(args[0], "Restore"))
+                RunServerBackup();
+            else
+                RunServer();
+        }
+
+        // Main function for when server is restarting
+        // deserializes market backup and starts thread to allow reconnnects for 5 seconds
+        // before kicking traders who havent reconnected
+        public static void RunServerBackup()
+        {
+            Thread.Sleep(1000);
+            RestoreMarket();
+            Console.WriteLine("Server is attempting recovery");
+            PrintTradersFromBackup();
+            Market.AddMarketMessage(Message.serverRebookUI());
+            _isRestarting = true;
+            new Thread(RestartThread.Run).Start();
+            RunServer();
+        }
+
         // Main TcpListening method
         public static void RunServer()
         {
@@ -53,6 +76,7 @@ namespace Server
                     ClientHandler handler = new ClientHandler();
                     handlers.Add(handler);
                     new Thread(handler.HandleIncomingMessages).Start(tcpClient);
+                    Market.AddMarketMessage("Client connected");
                 } catch (System.Net.Sockets.SocketException e) 
                 {
                     _isRunning = false;
@@ -101,35 +125,6 @@ namespace Server
             }).Start();
         }
 
-        // Main function for when server is restarting
-        // deserializes market backup and starts thread to allow reconnnects for 5 seconds
-        // before kicking traders who havent reconnected
-        public static void RunServerBackup()
-        {
-            RestoreMarket();
-            Console.WriteLine("Server is attempting recovery");
-            PrintTradersFromBackup();
-            Market.AddMarketMessage(Message.serverRebookUI());
-            _isRestarting = true;
-            new Thread(() =>
-            {
-                try
-                {
-                    Thread.Sleep(5000);
-                    Market.KickDisconnectedTraders();
-                    Market.AddMarketMessage(Message.serverRecoveredUI());
-                    Market.BroadCastMessage(Message.serverRecoveredBroadCast());
-                    Console.WriteLine("Server recovery attempt finished");
-                }
-                catch (Exception) { }
-                finally
-                {
-                    _isRestarting = false;
-                }
-            }).Start();
-            RunServer();
-        }
-
         // simply console prints any traders in temporary buffer waiting to be reconnected
         public static void PrintTradersFromBackup()
         {
@@ -169,11 +164,6 @@ namespace Server
                 Console.WriteLine("Creating backup file failed! Is this being executed from compiled directory?" +
                     $"\n{e.Message}");
             }
-        }
-
-        public static void Main(string[] args)
-        {
-            RunServerBackup();
         }
     }
 }

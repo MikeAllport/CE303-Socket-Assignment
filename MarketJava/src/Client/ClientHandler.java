@@ -33,13 +33,12 @@ public class ClientHandler {
     {
         if (printWriter == null)
             return;
-        if (serverRestarting)
-        {
-            ClientProgram.ui.addMessage(String.format("Server reconnecting, cannot send message",
-                    message));
-            return;
-        }
-        this.printWriter.println(message);
+        try {
+            if (serverRestarting && TRADER_TRADE.getLabel().contains(message.split(" ")[0]))
+                // disallows client sending trade messages whilst restarting
+                return;
+            this.printWriter.println(message);
+        } catch (Exception ignore) {}
     }
 
     protected void trade(String traderID)

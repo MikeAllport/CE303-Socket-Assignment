@@ -22,8 +22,10 @@ namespace Client
         protected static Trader _trader = null;
         public Trader Trader { get { return _trader; } }
         private static TcpClient tcpClient = null;
-        // used to determine whether client can send messages during restart
-        private Boolean _serverReconnecting = false;
+        // used to determine whether ui should wait to close connection due to a delay
+        // in server restarting - issue when closing connection during this delay
+        private static bool _serverReconnecting = false;
+        public static bool ServerReconnecting { get { return _serverReconnecting; } set { _serverReconnecting = value; } }
 
         public Handler(Market market)
         {
@@ -36,15 +38,16 @@ namespace Client
             new Thread(new SocketListener(this).Run).Start();
         }
 
-        // sends a string to the socket streamwriter
+        // sends a string to the socket streamwriter if connected
         public void SendMessage(string message)
         {
-            if (_serverReconnecting)
+            try
             {
-                market.AddUIMessage($"Server reconnecting, cannot send message '{message}'");
-                return;
-            }
-            writer.WriteLine(message);
+                if (_serverReconnecting && Equals(message.Split(" ")[0], TRADER_TRADE.ToString()))
+                    // disallows trade messages being send during restart
+                    return;
+                writer.WriteLine(message);
+            } catch (Exception e) { Console.WriteLine("Not connected to server"); }
         }
 
         // main logic for processing a message from the server utilizes MessageEnums

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ServerUI"
         mc:Ignorable="d"
         Title="Trader Client" Height="475" Width="800"
-        Closing="Window_Closing" Closed="Window_Closed">
+        Closing="Window_Closing" Closed="Window_Closed" ResizeMode="NoResize">
     <Grid>
         <!-- Middle content panes-->
         <ScrollViewer x:Name="TraderPane" Margin="0,20,545,0">

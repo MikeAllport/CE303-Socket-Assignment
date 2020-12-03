@@ -1,14 +1,26 @@
 package Utils;
 
+/**
+ * Messages purpose is to enumerate all server/client communication messages so that messages are uniform
+ * across both applications. Class contains static methods to retrieve the desired string messages for
+ * a given enum.
+ *
+ * Methods named xBroadcast(...) are used for sending messages to client/server
+ * Methods named xUI(...) are used for displaying messages in the ui
+ */
 public enum Message
 {
-    TRADER_LIST("TRADER_LIST "), ERROR("ERROR "),
-    TRADE_FAIL("TRADE_FAIL "), TRADER_JOINED("TRADER_JOINED "), TRADER_LEFT("TRADER_LEFT "),
-    TRADER_ACQ_STOCK("TRADER_ACQ_STOCK "), TRADER_ID("TRADER_ID "), TRADER_TRADE("TRADER_TRADE "),
-    TRADER_WITH_STOCK("TRADER_WITH_STOCK "), TRADER_RECONNECTING("TRADER_RECONNECTING "),
-    TRADER_NEW("TRADER_NEW "),
-    SERVER_RESTORED("SERVER_RESTORED "), SERVER_REBOOT("SERVER_REBOOT "), CONNECT_SUCC("CONNECT_SUCC "),
-    TRADE_SUCC("TRADE_SUCC ");
+    CONNECT_SUCC("CONNECT_SUCC "),SERVER_REBOOT("SERVER_REBOOT "),
+
+    TRADER_NEW("TRADER_NEW "), TRADER_RECONNECTING("TRADER_RECONNECTING "),
+
+    TRADER_LIST("TRADER_LIST "), TRADER_ID("TRADER_ID "), TRADER_WITH_STOCK("TRADER_WITH_STOCK "),
+    TRADER_JOINED("TRADER_JOINED "),
+
+    TRADER_TRADE("TRADER_TRADE "), TRADE_SUCC("TRADE_SUCC "), TRADE_FAIL("TRADE_FAIL "),
+
+    TRADER_LEFT("TRADER_LEFT "), TRADER_ACQ_STOCK("TRADER_ACQ_STOCK "),
+    SERVER_RESTORED("SERVER_RESTORED "), ERROR("ERROR ");
 
     private final String label;
 

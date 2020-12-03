@@ -25,9 +25,11 @@ namespace Client
         {
             try
             {
-                while (!Program.SocketClosed)
+                while (!Program.SocketClosed && !Program.applicationClosed)
                 {
                     string line = reader.ReadLine();
+                    if (line == null)
+                        throw new Exception("Socket disconnected");
                     this.handler.ProcessLine(line);
                 }
             }
